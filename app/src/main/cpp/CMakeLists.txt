@@ -6,9 +6,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -Werror")
 set(bx_dir ../../../../../bx)
 add_subdirectory(${bx_dir} bx)
 
-# 添加bimg_decode库
+# 添加bimg库
 set(bimg_dir ../../../../../bimg)
 add_subdirectory(${bimg_dir} bimg)
+
+# 添加bimg-decode库
+set(bimg-decode_dir ../../../../../bimg/src)
+add_subdirectory(${bimg-decode_dir} bimg-decode)
 
 # 添加dear-imgui库
 set(dear-imgui_dir ../../../../../bgfx/3rdparty/dear-imgui)
@@ -41,4 +45,5 @@ target_include_directories(native-activity PRIVATE
 
 target_link_libraries(native-activity
     bgfx
-    examples-common)
+    examples-common
+    dear-imgui)
