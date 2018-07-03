@@ -9,7 +9,8 @@ android {
         targetSdkVersion  25
         externalNativeBuild {
             cmake {
-                arguments '-DANDROID_STL=c++_static'
+                arguments   '-DANDROID_TOOLCHAIN=clang',
+                            '-DANDROID_STL=c++_static'
             }
         }
     }
